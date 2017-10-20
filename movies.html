@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>The Great Movie Rank! </title> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="movies.js"></script>
+<link rel="stylesheet" type="text/css" href="movies.css">
+</head>
+<body>
+
+<div ng-app='app' ng-controller='movieCtrl'>
+
+<div class='header'>
+  <h2> The Great Movie Ranking </h2>
+  <p> Submit and Vote on your Favorite Movies </p>
+</div>
+
+<div class='addr'>
+  <form name='userMovie' ng-submit='addNew(userMovie)'>
+    <input placeholder='Title' ng-model='userMovie.title'/>
+    <input placeholder='Year' ng-model='userMovie.year'/>
+    <button type='submit'> Add Movie </button>
+  </form>  
+</div>
+
+<div class='movieList'>
+  <ul>
+    <li ng-repeat='movie in movies'>
+      <div class ='Movie'>
+        <img ng-src="{{movie.poster}}"/>
+        <h2>{{movie.title}} </h2>
+        <p>{{movie.year}} </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+</body>
+</html>
